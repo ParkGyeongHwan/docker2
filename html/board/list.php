@@ -26,8 +26,8 @@
 
             <tr>
                 <td><?php echo $row["_id"]?></td>
-                <td><?php echo $row["title"]?>
-                    <a href="delete.php?_id=<?php echo $row["_id"]?>">삭제 </a></td>
+                <td><a href="view.php?_id=<?php echo $row["_id"]?>"><?php echo $row["title"]?></a>
+                <a href="delete.php?_id=<?php echo $row["_id"]?>">삭제</a></td>
              <td><?php echo $row["name"]?></td>
   </form>
             </tr> 
@@ -42,3 +42,6 @@
 
     </body>
 </html>
+
+
+<!-- <a href="view.php?_id="> -->
