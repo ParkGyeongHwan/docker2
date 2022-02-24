@@ -1,5 +1,9 @@
 <?php 
 
+error_reporting( E_ALL );
+ini_set( "display_errors", 1 );
+
+
 $mysql_hostname = 'host.docker.internal';
 
 $mysql_username = 'Hwan';
@@ -14,7 +18,7 @@ $mysql_charset = 'UTF8';
 
  
 
-$connect = new mysqli($mysql_hostname, $mysql_username, $mysql_password, $mysql_database, $mysql_port, $mysql_charset);
+$conn = new mysqli($mysql_hostname, $mysql_username, $mysql_password, $mysql_database, $mysql_port, $mysql_charset);
 
  
 
@@ -22,11 +26,8 @@ if($connect->connect_errno){
 
     echo '[연결실패..] : '.$connect->connect_error.'';
 
-}else{
-
-    echo '[연결성공!]'.'<br>';
-
 }
+
 
  
 
