@@ -10,6 +10,8 @@ $sql = "
 INSERT INTO board (name,title,content)
 VALUES ('". $name ."','". $title ."','". $content ."')
 ";
+echo $sql;
+exit();
 
 $conn->query($sql);
 //mysql 쿼리 수행

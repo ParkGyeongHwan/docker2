@@ -1,10 +1,12 @@
 <?php 
     include "../db.php";
 
-    $sql = "SELECT _id,name,title FROM board order by _id desc";
+
+    $sql = "SELECT _id,name,title,view_count FROM board order by _id desc";
     $result = $conn->query($sql);
      
     $conn->close();
+
 ?>
 <html>
     <head>
@@ -17,19 +19,21 @@
                 <td>번호</td>
                 <td>제목</td>
                 <td>작성자</td>
+                <td>열람수</td>
             </tr>
 
 <?php 
   
   while($row = $result->fetch_assoc()) { 
-    ?>
-
+ ?>
             <tr>
                 <td><?php echo $row["_id"]?></td>
-                <td><a href="view.php?_id=<?php echo $row["_id"]?>"><?php echo $row["title"]?></a>
-                <a href="delete.php?_id=<?php echo $row["_id"]?>">삭제</a></td>
-             <td><?php echo $row["name"]?></td>
-  </form>
+                <td>
+                    <a href="view.php?_id=<?php echo $row["_id"]?>"><?php echo $row["title"]?></a> 
+                    <a href="delete.php?_id=<?php echo $row["_id"]?>"> [삭제]</a>
+                </td>
+                <td><?php echo $row["name"]?></td>
+                <td><?php echo $row["view_count"]?></td>
             </tr> 
 <?php 
     }
@@ -42,6 +46,3 @@
 
     </body>
 </html>
-
-
-<!-- <a href="view.php?_id="> -->
