@@ -1,6 +1,6 @@
 <?php 
     include "../db.php";
- 
+
     $sql = "SELECT _id,name,title FROM board order by _id desc";
     $result = $conn->query($sql);
      
@@ -22,11 +22,14 @@
 <?php 
   
   while($row = $result->fetch_assoc()) { 
- ?>
+    ?>
+
             <tr>
                 <td><?php echo $row["_id"]?></td>
-                <td><?php echo $row["title"]?></td>
-                <td><?php echo $row["name"]?></td>
+                <td><?php echo $row["title"]?>
+                    <a href="delete.php?_id=<?php echo $row["_id"]?>">삭제 </a></td>
+             <td><?php echo $row["name"]?></td>
+  </form>
             </tr> 
 <?php 
     }
