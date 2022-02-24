@@ -25,6 +25,7 @@
 
             내용 : <?php echo nl2br($row[3])?>
             <br />
+            <a href="edit.php?_id=<?php echo $id ?>">수정</a> 
             <a href="list.php">목록으로</a>
 
     </body>
