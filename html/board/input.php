@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title></title>
+        <title>나만의 게시판</title>
     </head>
     <body>
 
@@ -10,8 +10,9 @@
 
             제목 : <input type="text" name="title"> <br />
 
-            <input type="submit" value="등록하기"> 
+            내용 : <textarea style="width:400px;height:300px" name="content"></textarea> <br />
 
+            <input type="submit" value="등록하기"> 
 
         </form>
 
