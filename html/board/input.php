@@ -1,3 +1,16 @@
+<?php
+
+
+    session_start();
+
+    if($_SESSION["name"] =='') {
+        echo "로그인이 필요합니다. <a href='login.php'>로그인하러가기</a>";
+        exit();
+    }
+
+
+?>
+
 <html>
     <head>
         <title>나만의 게시판</title>
@@ -6,7 +19,7 @@
 
         <form method="post" action="insert.php">
 
-            작성자 : <input type="text" name="name"> <br />
+            작성자 : <input type="text" name="name" value ="<?php echo $_SESSION["name"]?>"> <br />
 
             제목 : <input type="text" name="title"> <br />
 
