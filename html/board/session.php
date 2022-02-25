@@ -7,7 +7,6 @@
     $id = $_POST["id"];
     $pw = $_POST["pw"];
 
-
     $sql = "
     SELECT
         name
